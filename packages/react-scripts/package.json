@@ -1,8 +1,8 @@
 {
-  "name": "react-scripts",
+  "name": "dfa-react-base",
   "version": "1.1.1",
   "description": "Configuration and scripts for Create React App.",
-  "repository": "facebookincubator/create-react-app",
+  "repository": "kellric/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"
