@@ -37,15 +37,21 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    test: 'react-scripts test --env=jsdom',
+    'test:lint:js': 'eslint src/**/*.js src/**/*.jsx',
+    'test:lint:css': 'stylelint "**/*.css"',
+    'test:unit': 'react-scripts test --env=jsdom',
     eject: 'react-scripts eject',
-    buildcss: 'node-sass-chokidar src/ -o src/',
-    watchcss:
+    'build-css': 'node-sass-chokidar src/ -o src/',
+    'watch-css':
       'npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive',
-    startjs: 'react-scripts start',
+    'start-js': 'react-scripts start',
     start: 'npm-run-all -p watch-css start-js',
-    buildjs: 'react-scripts build',
+    'build-js': 'react-scripts build',
     build: 'npm-run-all build-css build-js',
+    styleguide: 'styleguidist server',
+    'styleguide-build': 'styleguidist build',
+    flow: 'flow',
+    test: 'run-s test:**',
   };
 
   fs.writeFileSync(
@@ -104,7 +110,19 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
-  args.push('react', 'react-dom');
+  args.push(
+    'react',
+    'react-dom',
+    'npm-run-all',
+    'eslint',
+    'stylelint',
+    'stylelint-config-standard',
+    'stylelint-no-unsupported-browser-features',
+    'eslint-plugin-react',
+    'eslint-config-airbnb',
+    'eslint-plugin-jsx-a11y',
+    'react-styleguidist'
+  );
 
   // Install additional template dependencies, if present
   const templateDependenciesPath = path.join(
