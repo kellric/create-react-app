@@ -37,21 +37,27 @@ module.exports = function(
 
   // Setup the script rules
   appPackage.scripts = {
-    'test:lint:js': 'eslint src/**/*.js src/**/*.jsx',
-    'test:lint:css': 'stylelint "**/*.css"',
-    'test:unit': 'react-scripts test --env=jsdom',
-    eject: 'react-scripts eject',
-    'build-css': 'node-sass-chokidar src/ -o src/',
-    'watch-css':
-      'npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive',
-    'start-js': 'react-scripts start',
-    start: 'npm-run-all -p watch-css start-js',
-    'build-js': 'react-scripts build',
-    build: 'npm-run-all build-css build-js',
-    styleguide: 'styleguidist server',
-    'styleguide-build': 'styleguidist build',
-    flow: 'flow',
-    test: 'run-s test:**',
+    "test:lint:js": "eslint src/**/*.js src/**/*.jsx",
+    "test:lint:css": "stylelint \"**/*.scss\"",
+    "test:unit": "react-scripts test --env=jsdom",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "prettier:check:js": "prettier --debug-check src/**/*.js src/**/*.jsx",
+    "prettier:check:scss": "prettier --debug-check src/**/*.scss",
+    "prettier:check": "run-s prettier:check:**",
+    "prettier:fix:js": "prettier --write src/**/*.js src/**/*.jsx",
+    "prettier:fix:scss": "prettier --write src/**/*.scss",
+    "prettier:fix": "prettier --write prettier:fix:**",
+    "styleguide": "styleguidist server",
+    "styleguide-build": "styleguidist build",
+    "flow": "flow",
+    "test": "run-s test:**"
   };
 
   fs.writeFileSync(
@@ -112,16 +118,7 @@ module.exports = function(
   }
   args.push(
     'react',
-    'react-dom',
-    'npm-run-all',
-    'eslint',
-    'stylelint',
-    'stylelint-config-standard',
-    'stylelint-no-unsupported-browser-features',
-    'eslint-plugin-react',
-    'eslint-config-airbnb',
-    'eslint-plugin-jsx-a11y',
-    'react-styleguidist'
+    'react-dom'    
   );
 
   // Install additional template dependencies, if present
