@@ -1,6 +1,6 @@
 {
   "name": "dfa-react-base",
-  "version": "1.1.66",
+  "version": "1.1.67",
   "description": "Configuration and scripts for Create React App.",
   "repository": "kellric/create-react-app",
   "license": "MIT",
@@ -39,6 +39,7 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "object-assign": "4.1.1",
+    "postcss": "^5.0.0",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "postcss-syntax": "^0.10.0",
