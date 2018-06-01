@@ -164,44 +164,53 @@ module.exports = function(
   const displayedCommand = useYarn ? 'yarn' : 'npm';
   console.log(chalk.red('VERY IMPORTANT:'));
   console.log();
+
   console.log(`Success! Created ${appName} at ${appPath}`);
   console.log('Inside that directory, you can run several commands:');
   console.log();
+
   console.log(chalk.cyan(`  ${displayedCommand} start`));
-  console.log('    Starts the development server.');
+  console.log('    Starts the development server, enables Watch and hot swapping.');
   console.log();
-  console.log(
-    chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`)
-  );
+
+  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}build`));
   console.log('    Bundles the app into static files for production.');
   console.log();
+
   console.log(chalk.cyan(`  ${displayedCommand} test`));
-  console.log('    Starts the test runner.');
+  console.log('    Starts the test runner (jest, js linting, scss linting, accessibility and browser compatability).');
   console.log();
-  console.log(
-    chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}eject`)
-  );
-  console.log(
-    '    Removes this tool and copies build dependencies, configuration files'
-  );
-  console.log(
-    '    and scripts into the app directory. If you do this, you can’t go back!'
-  );
+
+  console.log(chalk.cyan(`  ${displayedCommand} prettier:check`));
+  console.log('    Runs a prettier check on js and scss without fixing.');
   console.log();
-  console.log('We suggest that you begin by typing:');
+
+  console.log(chalk.cyan(`  ${displayedCommand} prettier:fix`));
+  console.log('    Runs prettier fixing on js and scss.');
+  console.log();
+
+  console.log(chalk.cyan(`  ${displayedCommand} styleguide`));
+  console.log('    Starts the style guide server.');
+  console.log();
+
+  console.log(chalk.cyan(`  ${displayedCommand} styleguide-build`));
+  console.log('    Buils a static html style guide.');
+  console.log();
+
+  console.log(chalk.cyan(`  ${displayedCommand} ${useYarn ? '' : 'run '}eject`));
+  console.log('    Removes this tool and copies build dependencies, configuration files');
+  console.log('    and scripts into the app directory. If you do this, you can’t go back!' );
+  console.log();
+
+  console.log('Various other sub commmans are also available.' );
+  console.log();
+
+  console.log('Start by:');
   console.log();
   console.log(chalk.cyan('  cd'), cdpath);
   console.log(`  ${chalk.cyan(`${displayedCommand} start`)}`);
-  if (readmeExists) {
-    console.log();
-    console.log(
-      chalk.yellow(
-        'You had a `README.md` file, we renamed it to `README.old.md`'
-      )
-    );
-  }
   console.log();
-  console.log('Happy hacking!');
+  
 };
 
 function isReactInstalled(appPackage) {

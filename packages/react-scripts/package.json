@@ -1,6 +1,6 @@
 {
   "name": "dfa-react-base",
-  "version": "1.1.67",
+  "version": "1.1.75",
   "description": "Configuration and scripts for Create React App.",
   "repository": "kellric/create-react-app",
   "license": "MIT",
@@ -33,6 +33,13 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
+    "eslint": "4.10.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-flowtype": "2.39.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.4.0",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
@@ -61,13 +68,7 @@
     "moment": "^2.22.1",
     "node-sass-chokidar": "^1.2.2",
     "npm-run-all": "^4.1.2",
-    "postcss-scss": "1.0.5"
-  },
-  "devDependencies": {
-    "ajv": "^6.0.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "babel-loader": "^7.1.4",
+    "postcss-scss": "1.0.5",
     "eslint-config-prettier": "^2.6.0",
     "flow-bin": "^0.72.0",
     "husky": "^0.14.3",
@@ -80,14 +81,12 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-config-sass-guidelines": "5.0.0",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
-    "eslint": "4.10.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-loader": "1.9.0",
-    "eslint-plugin-flowtype": "2.39.1",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-react": "7.4.0",
     "stylelint-scss": "3.1.0"
+  },
+  "devDependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "babel-loader": "^7.1.4"
   },
   "scripts": {}
 }

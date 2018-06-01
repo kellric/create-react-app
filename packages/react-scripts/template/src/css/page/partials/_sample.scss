@@ -1,15 +1,22 @@
 .app {
-	width: 5vw;
+	width: 80vw;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .app-logo {
-	animation: App-logo-spin infinite 20s linear; 
-  
+	animation: App-logo-spin infinite 20s linear;
+	width: 5vw;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @keyframes App-logo-spin {
-	from { transform: rotate(0deg); }
-	to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
