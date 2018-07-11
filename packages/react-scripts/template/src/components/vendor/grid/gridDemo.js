@@ -5,8 +5,10 @@ import './GridDemo.css';
 export default function GridDemo() {	
 
 	return (
-		<div className="demoPage">    <section>
-
+		<div className="demoPage"> 
+		
+		<section>
+		<h1>Example Grids</h1>
         
         <h2>Basic usage. Just add a class <code>.grid-*</code> (from -1 to -12)</h2>
         <p> A sizing class on every cell is not needed.
